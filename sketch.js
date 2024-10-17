@@ -20,7 +20,7 @@ function setup() {
   b=100;
   createCanvas(400, 400);
   myButton = createButton("click")
-  myButton.mousePressed(randomizeBackground)
+  myButton.mousePressed(thinkingTime)
   myPicture = new Pictures(100,100,75,75,"peter.jpg")
   myInput = createInput();
   myInput.position(0,175)
@@ -53,12 +53,8 @@ function answerQuestion(){
   rndNumb = Math.floor(rndNumb)
   myAnswer = possibleAnswer[rndNumb]
 }//end answerQuestion
-function randomizeBackground(){
-   //this is going to randomly pick a number 
-   //between 0 and 255
-   r= random(255)
-   g= random(255)
-   b= random(255)
+function thinkingTime(){
   theirQuestion = ">> " + myInput.value();
-  answerQuestion();
+  myAnswer = "Let me think about that for a second"
+  setTimeout(answerQuestion,3000)
  }//end randomizeBackground
